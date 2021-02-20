@@ -6,23 +6,21 @@ const input = require('readline-sync');
 let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = ("Who was the first American woman in space? ");
-let correctAnswer = ("Sally Ride");
-let candidateAnswer = "";
+//let question = ("Who was the first American woman in space? ");
+//let correctAnswer = ("Sally Ride ");
+//let candidateAnswer = "";
 let questions = ["1: Who was the first American woman in space? ",
                  "2: True or false: 5000 meters = 5 kilometers? ",
                  "3: (5+3)/2*10 = ? ",
                  "4: Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
-                 "5: What is the minimum crew size for the ISS? "
+                 "5: What is the minimum crew size for the ISS? "];
 
-];
 let correctAnswers = ["Sally Ride",
                       "True",
                       "40",
                       "Trajectory",
-                      "3"
+                      "3"];
 
-];
 let candidateAnswers = [];
 
 
@@ -57,7 +55,7 @@ function gradeQuiz(candidateAnswers) {
 
   for (let i = 0; i < candidateAnswers.length; i++) 
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
-      grade += 1;
+      grade += 20;
       overall = (grade/5) * 100;
     }
    
