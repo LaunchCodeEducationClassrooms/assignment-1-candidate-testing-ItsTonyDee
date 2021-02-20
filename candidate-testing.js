@@ -6,20 +6,20 @@ const input = require('readline-sync');
 let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "";
-let correctAnswer = "";
-let candidateAnswer = "";
-let questions = ["1: Who was the first American woman in space? ",
+let question = " ";
+let correctAnswer = " ";
+let candidateAnswer = " ";
+let questions = [ "1: Who was the first American woman in space? ",
                  "2: True or false: 5000 meters = 5 kilometers? ",
                  "3: (5+3)/2*10 = ? ",
                  "4: Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
-                 "5: What is the minimum crew size for the ISS? "];
+                 "5: What is the minimum crew size for the ISS? " ];
 
-let correctAnswers = ["Sally Ride",
+let correctAnswers = [ "Sally Ride",
                       "True",
                       "40",
                       "Trajectory",
-                      "3"];
+                      "3" ];
 
 let candidateAnswers = [];
 
@@ -52,18 +52,19 @@ function gradeQuiz(candidateAnswers) {
    }*/
 
   let grade = 0;
+  let overall = 0;
 
   for (let i = 0; i < candidateAnswers.length; i++) 
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
-      grade += 20;
-      overall = (grade/5) * 100;
+      overall += 1;
+      grade = (overall/5) * 100;
     }
    
   console.log(`80% required percent to pass.\n`)
-  console.log(`Candidate got ${grade}/5 answers correct for an overall of ${overall}%.\n`);
+  console.log(`Candidate got ${overall}/5 answers correct for an overall of ${grade}%.\n`);
 
 
-  if (overall >= 80) {
+  if (grade >= 80) {
     console.log(`Candidate: Passed the test.`);
   } else {
     console.log(`Candidate: Did not pass the test.`);
